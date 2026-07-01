@@ -1,38 +1,399 @@
-.App {
-  text-align: center;
+/* ===========================
+   GLOBAL STYLES
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+    background:#eceff1;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* ===========================
+   WRAPPER
+=========================== */
+
+.wrapper{
+    width:1200px;
+    margin:30px auto;
+    background:white;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+    overflow:hidden;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* ===========================
+   HEADER
+=========================== */
+
+.header{
+    background:#15803d;
+    color:white;
+    padding:25px;
+    text-align:center;
 }
 
-.App-link {
-  color: #61dafb;
+.header h1{
+    font-size:38px;
+    margin-bottom:8px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header p{
+    font-size:18px;
+    opacity:.9;
+}
+
+/* ===========================
+   PRODUCT GRID
+=========================== */
+
+.product-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+    padding:30px;
+}
+
+/* ===========================
+   PRODUCT CARD
+=========================== */
+
+.card{
+
+    background:white;
+
+    border-radius:15px;
+
+    border:1px solid #d1d5db;
+
+    padding:20px;
+
+    text-align:center;
+
+    transition:.3s;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+}
+
+/* ===========================
+   IMAGE
+=========================== */
+
+.card img{
+
+    width:170px;
+
+    height:170px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:5px solid #f3f4f6;
+
+}
+
+/* ===========================
+   TITLE
+=========================== */
+
+.card h3{
+
+    margin-top:15px;
+
+    color:#1f2937;
+
+    font-size:24px;
+
+}
+
+/* ===========================
+   PRICE
+=========================== */
+
+.price{
+
+    color:#16a34a;
+
+    font-size:26px;
+
+    font-weight:bold;
+
+    margin:15px 0;
+
+}
+
+/* ===========================
+   BUTTON SECTION
+=========================== */
+
+.buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+}
+
+/* ===========================
+   COMMON BUTTON
+=========================== */
+
+.buttons button{
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:50%;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+/* ===========================
+   ADD BUTTON
+=========================== */
+
+.add-btn{
+
+    background:#16a34a;
+
+    color:white;
+
+}
+
+.add-btn:hover{
+
+    background:#15803d;
+
+}
+
+/* ===========================
+   REMOVE BUTTON
+=========================== */
+
+.remove-btn{
+
+    background:#dc2626;
+
+    color:white;
+
+}
+
+.remove-btn:hover{
+
+    background:#b91c1c;
+
+}
+
+/* ===========================
+   CART SECTION
+=========================== */
+
+.cart-section{
+
+    background:#f8fafc;
+
+    border-top:3px solid #16a34a;
+
+    padding:30px;
+
+}
+
+/* ===========================
+   CART TITLE
+=========================== */
+
+.cart-section h2{
+
+    margin-bottom:20px;
+
+    color:#111827;
+
+}
+
+/* ===========================
+   TABLE
+=========================== */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-bottom:25px;
+
+}
+
+thead{
+
+    background:#16a34a;
+
+    color:white;
+
+}
+
+th{
+
+    padding:15px;
+
+    text-align:left;
+
+}
+
+td{
+
+    padding:15px;
+
+    border-bottom:1px solid #d1d5db;
+
+}
+
+/* ===========================
+   SUMMARY
+=========================== */
+
+.summary{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+    border-top:2px solid #d1d5db;
+
+    padding-top:20px;
+
+}
+
+.summary h2{
+
+    color:#15803d;
+
+    font-size:34px;
+
+}
+
+.summary h3{
+
+    color:#374151;
+
+}
+
+/* ===========================
+   CLEAR BUTTON
+=========================== */
+
+.clear-btn{
+
+    background:#ef4444;
+
+    color:white;
+
+    border:none;
+
+    padding:14px 30px;
+
+    border-radius:8px;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.clear-btn:hover{
+
+    background:#dc2626;
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:1200px){
+
+.wrapper{
+
+    width:95%;
+
+}
+
+}
+
+@media(max-width:900px){
+
+.product-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:600px){
+
+.product-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.header h1{
+
+    font-size:30px;
+
+}
+
+.summary{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+}
+
+.card img{
+
+    width:140px;
+
+    height:140px;
+
+}
+
 }
